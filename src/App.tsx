@@ -237,6 +237,20 @@ function App() {
   }
 
   // =========================
+  // EXCLUIR CONTA A PAGAR
+  // =========================
+
+  function handleDeleteBill(
+    billId: string
+  ) {
+    setBills((current) =>
+      current.filter(
+        (bill) => bill.id !== billId
+      )
+    )
+  }
+
+  // =========================
   // ATUALIZAR STATUS DA CONTA
   // =========================
 
@@ -432,6 +446,9 @@ function App() {
             onAddBill={handleAddBill}
             onUpdateBill={
               handleUpdateBill
+            }
+            onDeleteBill={
+              handleDeleteBill
             }
           />
         )}
